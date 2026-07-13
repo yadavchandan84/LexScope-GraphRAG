@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+evaluation/report.csv
+qdrant_data/
+install.log
+pdfs

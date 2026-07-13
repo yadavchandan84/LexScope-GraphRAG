@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tax Document Retrieval | Legal Research</title>
+  <style>
+    :root { --ink:#17231f; --muted:#63706b; --line:#d9e1dc; --green:#126a57; --pale:#f3f7f4; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-width:320px; color:var(--ink); background:#fafbf9; font-family:Arial, sans-serif; }
+    .shell { width:min(100% - 32px, 820px); margin:0 auto; padding:42px 0 56px; }
+    header { display:flex; align-items:center; justify-content:space-between; margin-bottom:34px; }
+    .brand { color:var(--green); font-size:20px; font-weight:700; letter-spacing:-.5px; }
+    header p { margin:0; color:var(--muted); font-size:14px; }
+    h1 { margin:0 0 20px; font-size:32px; letter-spacing:-.8px; }
+    .search-card, .answer-card, .sources { background:#fff; border:1px solid var(--line); border-radius:12px; }
+    .search-card { padding:18px; box-shadow:0 8px 24px rgba(20,40,30,.05); }
+    .search-top { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:12px; }
+    .search-top label { color:var(--muted); font-size:13px; }
+    select { margin-left:7px; padding:6px 26px 6px 8px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--ink); }
+    .query-row { display:flex; gap:10px; }
+    textarea { flex:1; min-height:74px; padding:13px; resize:vertical; border:1px solid var(--line); border-radius:8px; color:var(--ink); font:inherit; line-height:1.45; outline:none; }
+    textarea:focus, select:focus { border-color:var(--green); box-shadow:0 0 0 3px #dceee8; }
+    #ask { min-width:96px; border:0; border-radius:8px; background:var(--green); color:#fff; font-weight:700; cursor:pointer; }
+    #ask:hover:not(:disabled) { background:#0b5948; }
+    #ask:disabled { opacity:.65; cursor:wait; }
+    .result { margin-top:22px; }
+    .hidden { display:none; }
+    .status { min-height:20px; margin:0 2px 10px; color:var(--muted); font-size:14px; }
+    .banner { margin-bottom:12px; padding:12px 14px; color:#705600; background:#fff7d8; border:1px solid #ead98c; border-radius:8px; font-size:14px; }
+    .answer-card { padding:22px; }
+    .answer-label { margin-bottom:10px; color:var(--green); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    #answer { white-space:pre-wrap; font-size:16px; line-height:1.7; }
+    .sources { margin-top:12px; padding:18px 22px; }
+    .sources h2 { margin:0 0 10px; font-size:17px; }
+    #citations { display:grid; gap:8px; margin:0; padding:0; list-style:none; color:var(--muted); font-size:14px; }
+    #citations li { display:flex; gap:10px; }
+    .citation-number { color:var(--green); font-family:monospace; }
+    footer { margin-top:28px; color:var(--muted); font-size:12px; }
+    @media (max-width:560px) { .shell { width:min(100% - 24px, 820px); padding-top:24px; } header { align-items:flex-start; flex-direction:column; gap:5px; margin-bottom:28px; } h1 { font-size:27px; } .search-top, .query-row { align-items:stretch; flex-direction:column; } #ask { min-height:46px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header><div class="brand">Tax Document Retrieval</div><p>Grounded legal research</p></header>
+    <h1>Ask your legal research question</h1>
+    <section class="search-card" aria-label="Search the legal corpus">
+      <div class="search-top"><strong>Search the indexed corpus</strong></div>
+      <div class="query-row">
+        <textarea id="q" rows="2" aria-label="Your legal research question" placeholder="For example: Which military pay items are included in gross income?"></textarea>
+        <button id="ask" type="button"><span class="button-label">Ask</span></button>
+      </div>
+    </section>
+    <section id="result" class="result hidden" aria-live="polite" aria-busy="false">
+      <div id="status" class="status" role="status"></div>
+      <div id="insufficientBanner" class="banner hidden" role="alert"><strong>Limited context found.</strong> The corpus does not contain enough evidence for a confident answer.</div>
+      <article class="answer-card"><div class="answer-label">Answer</div><div id="answer"></div></article>
+      <section class="sources" aria-labelledby="sources-heading"><h2 id="sources-heading">Sources</h2><ul id="citations"></ul></section>
+    </section>
+    <footer>Answers are generated from your indexed corpus. Verify important guidance with the original source.</footer>
+  </main>
+  <script src="app.js?v=2"></script>
+</body>
+</html>
