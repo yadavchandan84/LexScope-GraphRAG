@@ -115,7 +115,63 @@ Notes:
 - Aura usually uses `NEO4J_USERNAME=neo4j`. Do not use the Aura instance ID as the database username unless your database was explicitly created that way.
 - `NEO4J_USER` is also supported for local compatibility, but `NEO4J_USERNAME` is recommended.
 
-## Step 1: Ingest PDFs
+## Docker Setup
+
+If you prefer to run the project using Docker and Docker Compose, you do not need Python or virtual environments installed on your host.
+
+### Prerequisites
+
+- Docker and Docker Compose installed.
+- A completed `.env` file in the project root.
+
+### Build the Images
+
+This command builds the backend image (which caches the BGE embedding and reranker models internally) and the Nginx frontend image:
+
+```bash
+docker compose build
+```
+
+### Ingest & Index via Docker
+
+You can run the ingestion and indexing scripts inside the backend container. Since directories are volume-mounted, the results will be written to your host filesystem (`ingestion/chunks.json` and `qdrant_data/`):
+
+```bash
+# Ingest PDFs from pdfs/ to ingestion/chunks.json
+docker compose run --rm backend python -m ingestion.run_ingest
+
+# Index the chunks into Qdrant & Neo4j
+docker compose run --rm backend python -m indexing.run_index
+```
+
+### Run the Application
+
+Start the FastAPI backend (port 8000) and the frontend (port 5500):
+
+```bash
+docker compose up
+```
+
+Press `Ctrl+C` to stop.
+
+- **API Health**: [http://localhost:8000/health](http://localhost:8000/health)
+- **Frontend UI**: [http://localhost:5500](http://localhost:5500)
+
+### Run Tests via Docker
+
+Run the test suite inside the container:
+
+```bash
+docker compose run --rm backend pytest -q
+```
+
+---
+
+## Local Setup
+
+Run all commands from the project root.
+
+### Step 1: Ingest PDFs (Local)
 
 This parses PDFs from `pdfs/`, classifies each document, creates metadata-rich chunks, and writes `ingestion/chunks.json`.
 
@@ -129,7 +185,7 @@ Each chunk includes:
 chunk_id, doc_id, doc_type, title, page_number, section_id, text
 ```
 
-## Step 2: Build Indexes
+### Step 2: Build Indexes (Local)
 
 This creates or updates both stores:
 
@@ -142,7 +198,7 @@ python -m indexing.run_index
 
 The indexer uses stable chunk IDs, so rerunning it upserts existing chunks instead of duplicating them. If Qdrant embeddings and Neo4j graph data already exist, you do not need to rerun this just to start the application.
 
-## Step 3: Run Backend
+### Step 3: Run Backend (Local)
 
 ```powershell
 python -m uvicorn app.api:app --reload --port 8000
@@ -160,7 +216,7 @@ Expected response:
 {"status": "ok"}
 ```
 
-## Step 4: Run Frontend
+### Step 4: Run Frontend (Local)
 
 Open a second PowerShell window:
 

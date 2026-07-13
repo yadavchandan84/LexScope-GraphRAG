@@ -1,0 +1,16 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git/
+.gitignore
+qdrant_data/
+ingestion/chunks.json
+Dockerfile.backend
+Dockerfile.frontend
+docker-compose.yml
+.agents/
+.idea/
+.vscode/
