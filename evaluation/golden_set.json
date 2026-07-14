@@ -1,387 +1,485 @@
 [
   {
-    "query": "What medical expenses can be deducted according to Publication 502?",
-    "ground_truth_answer": "Medical expenses are the costs of diagnosis, cure, mitigation, treatment, or prevention of disease, and payments for treatments affecting any structure or function of the body. They include payments for legal medical services rendered by physicians, surgeons, dentists, and other medical practitioners, and the costs of equipment, supplies, and diagnostic devices needed for these purposes.",
-    "ground_truth_doc_id": "IRS Publication 502 Medical and dental expenses",
-    "ground_truth_page": 2,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Are payments for prescription medicines and drugs deductible as medical expenses?",
-    "ground_truth_answer": "You can include in medical expenses amounts you pay for prescribed medicines and drugs that require a prescription of a physician. You cannot include the cost of nonprescription drugs (except insulin) or other purchases for general health.",
-    "ground_truth_doc_id": "IRS Publication 502 Medical and dental expenses",
-    "ground_truth_page": 14,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Can I include transportation costs to get medical care in my medical expense deduction?",
-    "ground_truth_answer": "You can include in medical expenses amounts paid for transportation primarily for, and essential to, medical care, such as bus, taxi, train, or plane fares, ambulance service, and out-of-pocket car expenses like gas and oil or the standard medical mileage rate.",
-    "ground_truth_doc_id": "IRS Publication 502 Medical and dental expenses",
-    "ground_truth_page": 16,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Who is eligible for the Credit for the Elderly or the Disabled?",
-    "ground_truth_answer": "You can take the credit for the elderly or the disabled if you are a qualified individual who is age 65 or older, or who is under 65, retired on permanent and total disability, and received taxable disability income, provided your income does not exceed certain limits.",
-    "ground_truth_doc_id": "RS Publication 524 – Credit for the Elderly or Disabled",
+    "query": "How can a tax-exempt entity verify if its refueling property location is within an eligible census tract using 2020 census boundaries?",
+    "ground_truth_answer": "To verify if a tax-exempt entity's refueling property location is within an eligible census tract using 2020 census boundaries, the entity must first determine its 11-digit census tract geographic identifier (GEOID) using the Census Bureau mapping tool. After obtaining the GEOID, the entity should check if it is included in the IRS-provided list in Appendix B.",
+    "ground_truth_doc_id": "IRS Publication 6029 Tax-Exempt Entities",
     "ground_truth_page": 1,
     "expect_insufficient_context": false
   },
   {
-    "query": "What income limits apply to the Credit for the Elderly or the Disabled?",
-    "ground_truth_answer": "You cannot take the credit if your adjusted gross income or the total of your nontaxable social security and other nontaxable pensions equals or exceeds the income limits set for your filing status in Publication 524.",
-    "ground_truth_doc_id": "RS Publication 524 – Credit for the Elderly or Disabled",
-    "ground_truth_page": 3,
+  "query": "Are payments for prescription medicines and drugs deductible as medical expenses?",
+  "ground_truth_answer": "Yes, payments for prescribed medicines and drugs can be included as medical expenses. A prescribed drug is one that requires a doctor's prescription for an individual's use. Additionally, amounts paid for insulin can also be included, even if not prescribed. However, nonprescription drugs, with the exception of insulin, cannot be included in medical expenses.",
+  "ground_truth_doc_id": "IRS Publication 502 Medical and Dental Expenses",
+  "ground_truth_page": 11,
+  "expect_insufficient_context": false
+  },
+  {
+    "query": "For what tax year were the conservation easement deductions claimed?",
+    "ground_truth_answer": "The conservation easement deductions were claimed for the tax year 2016.",
+    "ground_truth_doc_id": "10–20 U.S. Tax Court Opinions",
+    "ground_truth_page": 2,
     "expect_insufficient_context": false
   },
   {
-    "query": "What does permanent and total disability mean for the elderly or disabled credit?",
-    "ground_truth_answer": "A person is permanently and totally disabled if they cannot engage in any substantial gainful activity because of a physical or mental condition, and a physician has determined that the condition has lasted or can be expected to last continuously for at least a year or can lead to death.",
-    "ground_truth_doc_id": "RS Publication 524 – Credit for the Elderly or Disabled",
-    "ground_truth_page": 4,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "How does the Armed Forces' Tax Guide treat combat zone pay?",
-    "ground_truth_answer": "Enlisted members, warrant officers, and commissioned warrant officers can exclude from gross income military pay received for active service in a combat zone. Commissioned officers may exclude combat zone pay up to the highest rate of enlisted pay plus imminent danger or hostile fire pay.",
-    "ground_truth_doc_id": "Publication 3 (2025), Armed Forces' Tax Guide",
-    "ground_truth_page": 4,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Can members of the Armed Forces deduct moving expenses?",
-    "ground_truth_answer": "Members of the Armed Forces on active duty who move because of a permanent change of station can deduct their unreimbursed moving expenses, even though most other taxpayers cannot claim the moving expense deduction.",
-    "ground_truth_doc_id": "Publication 3 (2025), Armed Forces' Tax Guide",
-    "ground_truth_page": 13,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What extensions of time to file are available to members serving in a combat zone?",
-    "ground_truth_answer": "The deadline for filing returns, paying taxes, and taking other actions with the IRS is extended for individuals serving in a combat zone. The extension is at least 180 days after the last day in the combat zone, plus the number of days that were left to file when they entered the combat zone.",
-    "ground_truth_doc_id": "Publication 3 (2025), Armed Forces' Tax Guide",
+    "query": "For what tax year were the conservation easement deductions claimed?",
+    "ground_truth_answer": "The conservation easement deductions were claimed for the tax year 2016.",
+    "ground_truth_doc_id": "10–20 U.S. Tax Court Opinions",
     "ground_truth_page": 6,
     "expect_insufficient_context": false
   },
   {
-    "query": "Are cosmetic surgery costs deductible as medical expenses?",
-    "ground_truth_answer": "Generally, you cannot include in medical expenses the amount you pay for unnecessary cosmetic surgery. This applies to procedures directed at improving appearance that do not meaningfully promote the proper function of the body or prevent or treat illness or disease.",
-    "ground_truth_doc_id": "IRS Publication 502 Medical and dental expenses",
-    "ground_truth_page": 15,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "According to the Supreme Court in Commissioner v. Zuch, what does the term 'determination' refer to under §6330(d)(1)?",
-    "ground_truth_answer": "The 'determination' in §6330(d)(1) refers to the binary decision whether a levy may proceed. The statute distinguishes between the considerations or inputs that inform the appeals officer's decision and the ultimate determination itself.",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
-    "ground_truth_page": 6,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What recourse does a taxpayer have if the IRS zeroed out an outstanding balance using overpayments and no longer pursues a levy?",
-    "ground_truth_answer": "The taxpayer's recourse for alleged tax overpayments independent of an ongoing collection effort is to file a postdeprivation suit for a refund under 28 U.S.C. §§1346(a)(1) or 1491(a)(1).",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
-    "ground_truth_page": 9,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What method is used to value a conservation easement when evidence of comparable easement sales is unavailable?",
-    "ground_truth_answer": "When evidence of comparable easement sales is unavailable, the 'before-and-after' valuation method is used. This method measures the fair market value by taking the value of the unfettered land before the restriction (before value) and subtracting the value of the restricted land with the easement (after value).",
-    "ground_truth_doc_id": "Eleventh Circuit Opinion: JACKSON CROSSROADS LLC v. COMMISSIONER OF INTERNAL REVENUE",
-    "ground_truth_page": 4,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Why did the Tax Court reject the hypothetical granite mine as the highest and best use for the Jackson Crossroads property?",
-    "ground_truth_answer": "The Tax Court concluded that a mining operation was neither financially feasible nor maximally productive. Preliminary drilling from only three holes failed to provide enough data to reliably establish the granite reserves, and expert testimony demonstrated that a mine plan would result in a negative net present value.",
-    "ground_truth_doc_id": "Eleventh Circuit Opinion: JACKSON CROSSROADS LLC v. COMMISSIONER OF INTERNAL REVENUE",
-    "ground_truth_page": 12,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the standard deduction amount for a Head of Household filer for the tax year 2025 according to IRS Publication 3?",
-    "ground_truth_answer": "The standard deduction amount for a Head of Household filer for the tax year 2025 has been increased to $23,625.",
-    "ground_truth_doc_id": "IRS Publication 3 (2025), Armed Forces' Tax Guide",
-    "ground_truth_page": 2,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the maximum Child Tax Credit amount allowed per qualifying child starting in the tax year 2025?",
-    "ground_truth_answer": "Beginning in 2025, the maximum child tax credit (CTC) amount has increased to $2,200 for each qualifying child.",
-    "ground_truth_doc_id": "IRS Publication 3 (2025), Armed Forces' Tax Guide",
-    "ground_truth_page": 2,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "According to Justice Barrett's majority opinion in Commissioner v. Zuch, what is the default rule in tax litigation for a taxpayer wanting to contest a tax liability?",
-    "ground_truth_answer": "The default rule requires taxpayers to first pay the disputed tax before pursuing a challenge in a postpayment lawsuit for a refund.",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
-    "ground_truth_page": 2,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What happens to the Tax Court's jurisdiction under §6330(d)(1) if the IRS completely halts its pursuit of a levy because the tax liability is reduced to zero?",
-    "ground_truth_answer": "The Tax Court loses jurisdiction over the proceeding. Once the IRS drops or halts its pursuit of the levy, there is no longer an adverse 'determination' left to review, meaning the Tax Court has no freestanding jurisdiction to review any remaining underlying tax liability disputes.",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
-    "ground_truth_page": 5,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "In Commissioner v. Zuch, how did the IRS completely satisfy Jennifer Zuch's disputed 2010 tax liability while her Tax Court appeal was pending?",
-    "ground_truth_answer": "The IRS repeatedly seized and applied Zuch's tax overpayments and refunds from subsequent tax years to her outstanding 2010 tax liability until the balance was entirely reduced to zero.",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
-    "ground_truth_page": 3,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "On what grounds did the Third Circuit Court of Appeals initially reverse the Tax Court's dismissal of the Zuch case?",
-    "ground_truth_answer": "The Third Circuit held that the IRS's abandonment of the levy did not moot the case because §6330(c)(2)(B) explicitly permits taxpayers to challenge the existence or amount of their underlying tax liability, which remained a live dispute between the parties.",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
-    "ground_truth_page": 4,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Can a taxpayer use a Collection Due Process (CDP) appeal in the Tax Court to seek or force an overpayment refund after the underlying levy is canceled?",
-    "ground_truth_answer": "No. The Tax Court lacks freestanding or independent authority under §6330 to determine an overpayment or order a refund or credit of tax paid once the collection action itself is no longer at issue.",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
+    "query": "What charitable-contribution deduction did Jackson Crossroads claim on its partnership tax return for the short tax period ending December 31, 2016?",
+    "ground_truth_answer": "Jackson Crossroads claimed a charitable-contribution deduction of approximately $23.1 million on its partnership tax return for the short tax period ending December 31, 2016.",
+    "ground_truth_doc_id": "10–20 U.S. Tax Court Opinions",
     "ground_truth_page": 7,
     "expect_insufficient_context": false
   },
   {
-    "query": "Under 26 U.S.C. §6330(c)(3), what distinction does the Supreme Court establish between 'considerations' and the ultimate 'determination'?",
-    "ground_truth_answer": "The appeals officer evaluates various inputs and liability challenges as 'considerations' to inform their decision, but the statutory 'determination' itself is strictly limited to the binary decision of whether or not the proposed levy can proceed.",
-    "ground_truth_doc_id": "Supreme Court Opinion: COMMISSIONER OF INTERNAL REVENUE v. ZUCH",
-    "ground_truth_page": 6,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the penalty exception for a corporate taxpayer filing under Section 448 of the Internal Revenue Code?",
-    "ground_truth_answer": "Insufficient Context: The provided database focuses strictly on the Supreme Court ruling of Commissioner v. Zuch and standard Collection Due Process procedures.",
-    "ground_truth_doc_id": null,
-    "ground_truth_page": null,
-    "expect_insufficient_context": true
-  },
-  {
-    "query": "What new federal disbursement method is available for Form 941 tax refunds under Executive Order 14247?",
-    "ground_truth_answer": "In accordance with Executive Order 14247, the IRS will now issue Form 941 tax refunds via direct deposit automatically into a checking or savings account. Alternatively, taxpayers can still choose to apply their overpayment to their next return.",
-    "ground_truth_doc_id": "IRS Form 941 Instructions",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the fee associated with requesting a tax return copy using Form 4506, and to whom should the payment be made payable?",
-    "ground_truth_answer": "There is a $30 fee charged for each individual tax return requested. The full payment must be enclosed with the request via check or money order made payable to the 'United States Treasury'.",
-    "ground_truth_doc_id": "IRS Form 4506",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the penalty exception for a corporate taxpayer filing under Section 448 of the Internal Revenue Code?",
-    "ground_truth_answer": "Insufficient Context: The provided database focuses strictly on Form 941 and Form 4506 compliance, filing procedures, and fee schedules.",
-    "ground_truth_doc_id": null,
-    "ground_truth_page": null,
-    "expect_insufficient_context": true
-  },
-  {
-    "query": "What is the social security tax rate and the corresponding wage base limit for employers and employees in 2026?",
-    "ground_truth_answer": "For the year 2026, the social security tax rate is 6.2% each for both the employee and the employer. The social security wage base limit is set at $184,500.",
-    "ground_truth_doc_id": "IRS Form 941 Instructions",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the Medicare tax rate for 2026, and what is its wage base limit?",
-    "ground_truth_answer": "The Medicare tax rate is 1.45% each for the employee and the employer, which is completely unchanged from 2025. There is no wage base limit for Medicare tax.",
-    "ground_truth_doc_id": "IRS Form 941 Instructions",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What cash wage thresholds determine the application of social security and Medicare taxes for household and election workers in 2026?",
-    "ground_truth_answer": "Social security and Medicare taxes apply to household workers who are paid cash wages of $3,000 or more in 2026. For election workers, these taxes apply if they are paid $2,500 or more in cash or an equivalent compensation form during 2026.",
-    "ground_truth_doc_id": "IRS Form 941 Instructions",
-    "ground_truth_page": 2,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Where and for which tax years can an employer electronically access their Form 941 return transcripts?",
-    "ground_truth_answer": "Employers can access their Form 941 return transcripts for tax years 2023 and later by utilizing their IRS business tax account online at IRS.gov/BusinessTranscript.",
-    "ground_truth_doc_id": "IRS Form 941 Instructions",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Under the One Big Beautiful Bill Act (P.L. 119-21), what is the maximum deduction allowed for qualified tips on income tax returns?",
-    "ground_truth_answer": "For tax years beginning after 2024 and ending before 2029, employees and self-employed individuals are allowed to deduct up to $25,000 of qualified tips received in customary occupations on their income tax returns.",
-    "ground_truth_doc_id": "IRS Form 941 Instructions",
-    "ground_truth_page": 3,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "How does the total tax liability reported during the 4-quarter lookback period determine whether a business is a monthly or semiweekly schedule depositor?",
-    "ground_truth_answer": "If an employer reported $50,000 or less in taxes during the lookback period, they are classified as a monthly schedule depositor. If they reported more than $50,000 in taxes, they are classified as a semiweekly schedule depositor.",
-    "ground_truth_doc_id": "IRS Form 941 Instructions",
+    "query": "What method is used to determine the fair market value of a donated easement when evidence of comparable easement sales is unavailable?",
+    "ground_truth_answer": "When evidence of comparable easement sales is unavailable, the \"before-and-after\" valuation method is used to determine the fair market value of a donated easement. This method calculates the fair market value by subtracting the value of the restricted land with the easement (the \"after value\") from the value of the unfettered land before the restriction (the \"before value\").",
+    "ground_truth_doc_id": "10–20 U.S. Tax Court Opinions",
     "ground_truth_page": 4,
     "expect_insufficient_context": false
   },
   {
-    "query": "How long are copies of original Forms 1040, 1040A, and 1040EZ generally available from the IRS before being destroyed?",
-    "ground_truth_answer": "Copies of these specific 1040-series tax returns are generally available for a period of 7 years from the date of filing before they are legally destroyed.",
-    "ground_truth_doc_id": "IRS Form 4506",
+    "query": "What are the standard deduction amounts for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the standard deduction amounts are: $15,750 for single filers or those married filing separately; $31,500 for those married filing jointly or qualifying as a surviving spouse; and $23,625 for heads of household. These amounts are for most people and do not apply if you were born before January 2, 1961, are blind, or can be claimed as a dependent by someone else.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 30,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the standard deduction amounts for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the standard deduction amounts are: $15,750 for single filers or those married filing separately; $31,500 for those married filing jointly or qualifying as a surviving spouse; and $23,625 for heads of household. These amounts are for most people and do not apply if you were born before January 2, 1961, are blind, or can be claimed as a dependent by someone else.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 97,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the requirements and rules for claiming the Child Tax Credit (CTC) for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the Child Tax Credit (CTC) can reduce your tax by up to $2,200 for each qualifying child. A child is considered qualifying if they meet seven conditions: 1. Relationship (son, daughter, stepchild, foster child, brother, sister, or descendant of any of these). 2. Age (under 17 at the end of 2025). 3. Support (did not provide over half of their own support). 4. Residency (lived with you for more than half of 2025, with exceptions for temporary absences, birth/death in 2025, kidnapped children, children placed for adoption, eligible foster children, and children of divorced/separated parents). 5. Dependency (claimed as a dependent on your return). 6. Filing Status (does not file a joint return, unless only to claim a refund). 7. Citizenship (U.S. citizen, U.S. national, or U.S. resident alien). An adopted child is always treated as your own. To claim the CTC, the child must have a Social Security Number (SSN) valid for employment, issued on or before the due date of your 2025 return (including extensions). If the child's SSN was not valid for employment but became eligible by the due date, the CTC can still be claimed. The Additional Child Tax Credit (ACTC) is available if you cannot claim the full CTC. Refunds for returns claiming the ACTC cannot be issued before mid-February 2026. The CTC and ACTC may be reduced if your modified adjusted gross income (AGI) exceeds $400,000 for those married filing jointly, or $200,000 for all other filing statuses. If you or your spouse (if filing jointly) do not have an SSN or Individual Taxpayer Identification Number (ITIN) issued by the due date of your 2025 return (including extensions), you cannot claim the CTC or ACTC.",
+    "ground_truth_doc_id": "20 IRS Publications",
+    "ground_truth_page": 18,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the requirements and rules for claiming the Child Tax Credit (CTC) for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the Child Tax Credit (CTC) can reduce your tax by up to $2,200 for each qualifying child. A child is considered qualifying if they meet seven conditions: 1. Relationship (son, daughter, stepchild, foster child, brother, sister, or descendant of any of these). 2. Age (under 17 at the end of 2025). 3. Support (did not provide over half of their own support). 4. Residency (lived with you for more than half of 2025, with exceptions for temporary absences, birth/death in 2025, kidnapped children, children placed for adoption, eligible foster children, and children of divorced/separated parents). 5. Dependency (claimed as a dependent on your return). 6. Filing Status (does not file a joint return, unless only to claim a refund). 7. Citizenship (U.S. citizen, U.S. national, or U.S. resident alien). An adopted child is always treated as your own. To claim the CTC, the child must have a Social Security Number (SSN) valid for employment, issued on or before the due date of your 2025 return (including extensions). If the child's SSN was not valid for employment but became eligible by the due date, the CTC can still be claimed. The Additional Child Tax Credit (ACTC) is available if you cannot claim the full CTC. Refunds for returns claiming the ACTC cannot be issued before mid-February 2026. The CTC and ACTC may be reduced if your modified adjusted gross income (AGI) exceeds $400,000 for those married filing jointly, or $200,000 for all other filing statuses. If you or your spouse (if filing jointly) do not have an SSN or Individual Taxpayer Identification Number (ITIN) issued by the due date of your 2025 return (including extensions), you cannot claim the CTC or ACTC.",
+    "ground_truth_doc_id": "Publication 3 (2025)",
+    "ground_truth_page": 18,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the requirements and rules for claiming the Child Tax Credit (CTC) for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the Child Tax Credit (CTC) can reduce your tax by up to $2,200 for each qualifying child. A child is considered qualifying if they meet seven conditions: 1. Relationship (son, daughter, stepchild, foster child, brother, sister, or descendant of any of these). 2. Age (under 17 at the end of 2025). 3. Support (did not provide over half of their own support). 4. Residency (lived with you for more than half of 2025, with exceptions for temporary absences, birth/death in 2025, kidnapped children, children placed for adoption, eligible foster children, and children of divorced/separated parents). 5. Dependency (claimed as a dependent on your return). 6. Filing Status (does not file a joint return, unless only to claim a refund). 7. Citizenship (U.S. citizen, U.S. national, or U.S. resident alien). An adopted child is always treated as your own. To claim the CTC, the child must have a Social Security Number (SSN) valid for employment, issued on or before the due date of your 2025 return (including extensions). If the child's SSN was not valid for employment but became eligible by the due date, the CTC can still be claimed. The Additional Child Tax Credit (ACTC) is available if you cannot claim the full CTC. Refunds for returns claiming the ACTC cannot be issued before mid-February 2026. The CTC and ACTC may be reduced if your modified adjusted gross income (AGI) exceeds $400,000 for those married filing jointly, or $200,000 for all other filing statuses. If you or your spouse (if filing jointly) do not have an SSN or Individual Taxpayer Identification Number (ITIN) issued by the due date of your 2025 return (including extensions), you cannot claim the CTC or ACTC.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 112,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the requirements and rules for claiming the Child Tax Credit (CTC) for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the Child Tax Credit (CTC) can reduce your tax by up to $2,200 for each qualifying child. A child is considered qualifying if they meet seven conditions: 1. Relationship (son, daughter, stepchild, foster child, brother, sister, or descendant of any of these). 2. Age (under 17 at the end of 2025). 3. Support (did not provide over half of their own support). 4. Residency (lived with you for more than half of 2025, with exceptions for temporary absences, birth/death in 2025, kidnapped children, children placed for adoption, eligible foster children, and children of divorced/separated parents). 5. Dependency (claimed as a dependent on your return). 6. Filing Status (does not file a joint return, unless only to claim a refund). 7. Citizenship (U.S. citizen, U.S. national, or U.S. resident alien). An adopted child is always treated as your own. To claim the CTC, the child must have a Social Security Number (SSN) valid for employment, issued on or before the due date of your 2025 return (including extensions). If the child's SSN was not valid for employment but became eligible by the due date, the CTC can still be claimed. The Additional Child Tax Credit (ACTC) is available if you cannot claim the full CTC. Refunds for returns claiming the ACTC cannot be issued before mid-February 2026. The CTC and ACTC may be reduced if your modified adjusted gross income (AGI) exceeds $400,000 for those married filing jointly, or $200,000 for all other filing statuses. If you or your spouse (if filing jointly) do not have an SSN or Individual Taxpayer Identification Number (ITIN) issued by the due date of your 2025 return (including extensions), you cannot claim the CTC or ACTC.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 111,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How much combat zone pay can commissioned officers exclude per month for the year 2025?",
+    "ground_truth_answer": "For the year 2025, commissioned officers (excluding commissioned warrant officers) can exclude up to $10,983 per month of their combat zone pay. This amount is composed of $10,758 for the highest enlisted pay and $225 for imminent danger pay.",
+    "ground_truth_doc_id": "20 IRS Publications",
+    "ground_truth_page": 14,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How much combat zone pay can commissioned officers exclude per month for the year 2025?",
+    "ground_truth_answer": "For the year 2025, commissioned officers (excluding commissioned warrant officers) can exclude up to $10,983 per month of their combat zone pay. This amount is composed of $10,758 for the highest enlisted pay and $225 for imminent danger pay.",
+    "ground_truth_doc_id": "Publication 3 (2025)",
+    "ground_truth_page": 14,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the Form 1099-K reporting threshold for payment apps and online marketplaces for the year 2025?",
+    "ground_truth_answer": "The provided context does not contain information about the Form 1099-K reporting threshold for payment apps and online marketplaces for the year 2025. The documents mention a transition period for reporting transactions in excess of $600 for calendar years after 2022, but do not specify a threshold for 2025. They also mention an information reporting threshold increase to $2,000 for reportable payments made after 2025, but this refers to general information reporting and backup withholding, not specifically Form 1099-K for payment apps and online marketplaces.",
+    "ground_truth_doc_id": "IRS Publication 535 – Business Expenses - Copy",
+    "ground_truth_page": 2,
+    "expect_insufficient_context": true
+  },
+  {
+    "query": "What is the Form 1099-K reporting threshold for payment apps and online marketplaces for the year 2025?",
+    "ground_truth_answer": "The provided context does not contain information about the Form 1099-K reporting threshold for payment apps and online marketplaces for the year 2025. The documents mention a transition period for reporting transactions in excess of $600 for calendar years after 2022, but do not specify a threshold for 2025. They also mention an information reporting threshold increase to $2,000 for reportable payments made after 2025, but this refers to general information reporting and backup withholding, not specifically Form 1099-K for payment apps and online marketplaces.",
+    "ground_truth_doc_id": "IRS Publication 334 – Tax Guide for Small Business",
+    "ground_truth_page": 5,
+    "expect_insufficient_context": true
+  },
+  {
+    "query": "What is a Trump account, how is it established, and what are the eligibility requirements for the $1,000 pilot program contribution?",
+    "ground_truth_answer": "The \"Trump account\" is a new type of traditional individual retirement account (IRA) established for the exclusive benefit of a child. To establish this account and potentially receive a $1,000 pilot program contribution from the U.S. Treasury, Form 4547 must be filed. A child is eligible for the $1,000 pilot program contribution if they were born after December 31, 2024, and before January 1, 2029, are a U.S. citizen, have not had a prior pilot program contribution election processed, and possess a valid Social Security Number (SSN).",
+    "ground_truth_doc_id": "Instructions for Form 4547Form",
+    "ground_truth_page": 1,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is a Trump account, how is it established, and what are the eligibility requirements for the $1,000 pilot program contribution?",
+    "ground_truth_answer": "The \"Trump account\" is a new type of traditional individual retirement account (IRA) established for the exclusive benefit of a child. To establish this account and potentially receive a $1,000 pilot program contribution from the U.S. Treasury, Form 4547 must be filed. A child is eligible for the $1,000 pilot program contribution if they were born after December 31, 2024, and before January 1, 2029, are a U.S. citizen, have not had a prior pilot program contribution election processed, and possess a valid Social Security Number (SSN).",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is a Trump account, how is it established, and what are the eligibility requirements for the $1,000 pilot program contribution?",
+    "ground_truth_answer": "The \"Trump account\" is a new type of traditional individual retirement account (IRA) established for the exclusive benefit of a child. To establish this account and potentially receive a $1,000 pilot program contribution from the U.S. Treasury, Form 4547 must be filed. A child is eligible for the $1,000 pilot program contribution if they were born after December 31, 2024, and before January 1, 2029, are a U.S. citizen, have not had a prior pilot program contribution election processed, and possess a valid Social Security Number (SSN).",
+    "ground_truth_doc_id": "Instructions for Form 4547Form",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the standard deduction amounts for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the standard deduction amounts are as follows: Single or Married filing separately: $15,750; Married filing jointly or Qualifying surviving spouse: $31,500; and Head of household: $23,625.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the standard deduction amounts for the 2025 tax year?",
+    "ground_truth_answer": "For the 2025 tax year, the standard deduction amounts are as follows: Single or Married filing separately: $15,750; Married filing jointly or Qualifying surviving spouse: $31,500; and Head of household: $23,625.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 97,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the deduction limits and eligibility requirements for the \"No tax on tips\" and \"No tax on overtime\" deductions?",
+    "ground_truth_answer": "For the \"No tax on tips\" deduction, you cannot deduct more than $25,000 of qualified tips. Your deduction will be limited if your modified adjusted gross income (MAGI) is more than $150,000 (or $300,000 if married filing jointly). To be eligible, you and/or your spouse who received the tips must have a valid SSN, and if married, you must file a joint return.\n\nFor the \"No tax on overtime\" deduction, you may be eligible to deduct up to $12,500 ($25,000 if married filing jointly) of your qualified overtime compensation. Your deduction will be limited if your MAGI is more than $150,000 ($300,000 if married filing jointly). To be eligible, you and/or your spouse who received the overtime must have a valid SSN, and if married, you must file a joint return.",
+    "ground_truth_doc_id": "Publication 3 (2025), Armed Forces' Tax Guide",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the deduction limits and eligibility requirements for the \"No tax on tips\" and \"No tax on overtime\" deductions?",
+    "ground_truth_answer": "For the \"No tax on tips\" deduction, you cannot deduct more than $25,000 of qualified tips. Your deduction will be limited if your modified adjusted gross income (MAGI) is more than $150,000 (or $300,000 if married filing jointly). To be eligible, you and/or your spouse who received the tips must have a valid SSN, and if married, you must file a joint return.\n\nFor the \"No tax on overtime\" deduction, you may be eligible to deduct up to $12,500 ($25,000 if married filing jointly) of your qualified overtime compensation. Your deduction will be limited if your MAGI is more than $150,000 ($300,000 if married filing jointly). To be eligible, you and/or your spouse who received the overtime must have a valid SSN, and if married, you must file a joint return.",
+    "ground_truth_doc_id": "20 IRS Publications",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the deduction limits and eligibility requirements for the \"No tax on tips\" and \"No tax on overtime\" deductions?",
+    "ground_truth_answer": "For the \"No tax on tips\" deduction, you cannot deduct more than $25,000 of qualified tips. Your deduction will be limited if your modified adjusted gross income (MAGI) is more than $150,000 (or $300,000 if married filing jointly). To be eligible, you and/or your spouse who received the tips must have a valid SSN, and if married, you must file a joint return.\n\nFor the \"No tax on overtime\" deduction, you may be eligible to deduct up to $12,500 ($25,000 if married filing jointly) of your qualified overtime compensation. Your deduction will be limited if your MAGI is more than $150,000 ($300,000 if married filing jointly). To be eligible, you and/or your spouse who received the overtime must have a valid SSN, and if married, you must file a joint return.",
+    "ground_truth_doc_id": "Publication 517 Social Security and other information",
     "ground_truth_page": 2,
     "expect_insufficient_context": false
   },
   {
-    "query": "What is the estimated processing time for the IRS to fulfill a request submitted via Form 4506?",
-    "ground_truth_answer": "It may take up to 75 calendar days for the IRS to process a completed Form 4506 request.",
-    "ground_truth_doc_id": "IRS Form 4506",
+    "query": "What are the deduction limits and eligibility requirements for the \"No tax on tips\" and \"No tax on overtime\" deductions?",
+    "ground_truth_answer": "For the \"No tax on tips\" deduction, you cannot deduct more than $25,000 of qualified tips. Your deduction will be limited if your modified adjusted gross income (MAGI) is more than $150,000 (or $300,000 if married filing jointly). To be eligible, you and/or your spouse who received the tips must have a valid SSN, and if married, you must file a joint return.\n\nFor the \"No tax on overtime\" deduction, you may be eligible to deduct up to $12,500 ($25,000 if married filing jointly) of your qualified overtime compensation. Your deduction will be limited if your MAGI is more than $150,000 ($300,000 if married filing jointly). To be eligible, you and/or your spouse who received the overtime must have a valid SSN, and if married, you must file a joint return.",
+    "ground_truth_doc_id": "IRS Publication 334 – Tax Guide for Small Business",
+    "ground_truth_page": 4,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How much qualified passenger vehicle loan interest paid or accrued in 2025 can be deducted, and what are the phase-out limits?",
+    "ground_truth_answer": "For qualified passenger vehicle loan interest paid or accrued in 2025, you may be able to deduct up to $10,000 of that interest. This deduction begins to phase out if your modified adjusted gross income is more than $100,000 if filing as single, or more than $200,000 if married filing jointly. The provided text does not specify a purchase date for the loan, only the tax year in which interest is paid or accrued.",
+    "ground_truth_doc_id": "Publication 517 Social Security and other information",
+    "ground_truth_page": 2,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the overall limit for the deduction of state and local income, sales, and property taxes for the 2025 tax year?",
+    "ground_truth_answer": "For 2025, the overall limit for the deduction of state and local income, sales, and property taxes has been increased to $40,000 (or $20,000 if married filing separately). This limit is reduced if your modified adjusted gross income exceeds $500,000 (or $250,000 if married filing separately), but it will not be reduced below $10,000 (or $5,000 if married filing separately).",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 98,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the overall limit for the deduction of state and local income, sales, and property taxes for the 2025 tax year?",
+    "ground_truth_answer": "For 2025, the overall limit for the deduction of state and local income, sales, and property taxes has been increased to $40,000 (or $20,000 if married filing separately). This limit is reduced if your modified adjusted gross income exceeds $500,000 (or $250,000 if married filing separately), but it will not be reduced below $10,000 (or $5,000 if married filing separately).",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What changes have been made to the adoption credit refundability and special needs determinations beginning in 2025?",
+    "ground_truth_answer": "Beginning in 2025, up to $5,000 of the adoption credit may be refundable, with the refundable portion determined separately for each eligible child. Additionally, Indian Tribal governments now have parity for special needs adoption determinations, meaning their determinations are recognized for adoption credit purposes, similar to state government determinations.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 4,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What changes have been made to the adoption credit refundability and special needs determinations beginning in 2025?",
+    "ground_truth_answer": "Beginning in 2025, up to $5,000 of the adoption credit may be refundable, with the refundable portion determined separately for each eligible child. Additionally, Indian Tribal governments now have parity for special needs adoption determinations, meaning their determinations are recognized for adoption credit purposes, similar to state government determinations.",
+    "ground_truth_doc_id": "Publication 3 (2025), Armed Forces' Tax Guide",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What changes have been made to the adoption credit refundability and special needs determinations beginning in 2025?",
+    "ground_truth_answer": "Beginning in 2025, up to $5,000 of the adoption credit may be refundable, with the refundable portion determined separately for each eligible child. Additionally, Indian Tribal governments now have parity for special needs adoption determinations, meaning their determinations are recognized for adoption credit purposes, similar to state government determinations.",
+    "ground_truth_doc_id": "20 IRS Publications",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the standard mileage rate for the business use of a car, van, pickup, or panel truck for 2025, and what are the rules regarding deducting actual expenses?",
+    "ground_truth_answer": "For 2025, the standard mileage rate for the business use of a car, van, pickup, or panel truck is 70 cents per mile. This rate covers the cost of operating the vehicle for business purposes. If you choose to use the standard mileage rate, you cannot deduct your actual expenses for that year, with the exception of business-related parking fees and tolls. However, you may still be able to deduct interest paid on a car loan.",
+    "ground_truth_doc_id": "IRS Publication 17",
+    "ground_truth_page": 103,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the standard mileage rate for the business use of a car, van, pickup, or panel truck for 2025, and what are the rules regarding deducting actual expenses?",
+    "ground_truth_answer": "For 2025, the standard mileage rate for the business use of a car, van, pickup, or panel truck is 70 cents per mile. This rate covers the cost of operating the vehicle for business purposes. If you choose to use the standard mileage rate, you cannot deduct your actual expenses for that year, with the exception of business-related parking fees and tolls. However, you may still be able to deduct interest paid on a car loan.",
+    "ground_truth_doc_id": "IRS Publication 334",
+    "ground_truth_page": 4,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the standard mileage rate for the business use of a car, van, pickup, or panel truck for 2025, and what are the rules regarding deducting actual expenses?",
+    "ground_truth_answer": "For 2025, the standard mileage rate for the business use of a car, van, pickup, or panel truck is 70 cents per mile. This rate covers the cost of operating the vehicle for business purposes. If you choose to use the standard mileage rate, you cannot deduct your actual expenses for that year, with the exception of business-related parking fees and tolls. However, you may still be able to deduct interest paid on a car loan.",
+    "ground_truth_doc_id": "IRS Publication 334",
+    "ground_truth_page": 35,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the depreciation limitations for passenger automobiles placed in service in calendar year 2025?",
+    "ground_truth_answer": "For passenger automobiles placed in service in calendar year 2025, the depreciation limitations are as follows:\n- If the Code section 168(k) additional first-year depreciation deduction applies: $20,200 for the first tax year, $19,600 for the second tax year, $11,800 for the third tax year, and $7,060 for each succeeding year.\n- If the Code section 168(k) additional first-year depreciation deduction does not apply: $12,200 for the first tax year, $19,600 for the second tax year, $11,800 for the third tax year, and $7,060 for each succeeding year.\nThese limits are reduced if the business use of the vehicle is less than 100%.",
+    "ground_truth_doc_id": "IRS Publication 463 – Travel, Gift, and Car Expenses pdf download - Copy",
+    "ground_truth_page": 28,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the depreciation limitations for passenger automobiles placed in service in calendar year 2025?",
+    "ground_truth_answer": "For passenger automobiles placed in service in calendar year 2025, the depreciation limitations are as follows:\n- If the Code section 168(k) additional first-year depreciation deduction applies: $20,200 for the first tax year, $19,600 for the second tax year, $11,800 for the third tax year, and $7,060 for each succeeding year.\n- If the Code section 168(k) additional first-year depreciation deduction does not apply: $12,200 for the first tax year, $19,600 for the second tax year, $11,800 for the third tax year, and $7,060 for each succeeding year.\nThese limits are reduced if the business use of the vehicle is less than 100%.",
+    "ground_truth_doc_id": "IRS Publication 463 – Travel, Gift, and Car Expenses pdf download - Copy",
+    "ground_truth_page": 23,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How does tax law distinguish between entertainment expenses and business meals when food is provided at an entertainment venue?",
+    "ground_truth_answer": "Tax law distinguishes between entertainment expenses and business meals when food is provided at an entertainment venue based on how the food and beverages are purchased and documented. Generally, entertainment expenses are not deductible. However, 50% of the cost of business meals may be deductible if certain conditions are met, such as the taxpayer or an employee being present, the food not being lavish or extravagant, and being provided to a current or potential business contact. Food and beverages provided during entertainment events are not considered entertainment if they are purchased separately from the entertainment, or if their cost is stated separately from the entertainment cost on one or more bills, invoices, or receipts. If these conditions are met, 50% of the cost of the food and beverages may be deductible as a business meal expense. It is important not to inflate the amount charged for food and beverages to circumvent the entertainment disallowance rule.",
+    "ground_truth_doc_id": "IRS Publication 463 – Travel, Gift, and Car Expenses pdf download - Copy",
+    "ground_truth_page": 14,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How does tax law distinguish between entertainment expenses and business meals when food is provided at an entertainment venue?",
+    "ground_truth_answer": "Tax law distinguishes between entertainment expenses and business meals when food is provided at an entertainment venue based on how the food and beverages are purchased and documented. Generally, entertainment expenses are not deductible. However, 50% of the cost of business meals may be deductible if certain conditions are met, such as the taxpayer or an employee being present, the food not being lavish or extravagant, and being provided to a current or potential business contact. Food and beverages provided during entertainment events are not considered entertainment if they are purchased separately from the entertainment, or if their cost is stated separately from the entertainment cost on one or more bills, invoices, or receipts. If these conditions are met, 50% of the cost of the food and beverages may be deductible as a business meal expense. It is important not to inflate the amount charged for food and beverages to circumvent the entertainment disallowance rule.",
+    "ground_truth_doc_id": "IRS Publication 463 – Travel, Gift, and Car Expenses pdf download - Copy",
+    "ground_truth_page": 13,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How does tax law distinguish between entertainment expenses and business meals when food is provided at an entertainment venue?",
+    "ground_truth_answer": "Tax law distinguishes between entertainment expenses and business meals when food is provided at an entertainment venue based on how the food and beverages are purchased and documented. Generally, entertainment expenses are not deductible. However, 50% of the cost of business meals may be deductible if certain conditions are met, such as the taxpayer or an employee being present, the food not being lavish or extravagant, and being provided to a current or potential business contact. Food and beverages provided during entertainment events are not considered entertainment if they are purchased separately from the entertainment, or if their cost is stated separately from the entertainment cost on one or more bills, invoices, or receipts. If these conditions are met, 50% of the cost of the food and beverages may be deductible as a business meal expense. It is important not to inflate the amount charged for food and beverages to circumvent the entertainment disallowance rule.",
+    "ground_truth_doc_id": "RS Publication 525 – Taxable and Nontaxable Income",
+    "ground_truth_page": 22,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What distinct legal criteria must a business expense meet to be classified as both ordinary and necessary for a tax deduction?",
+    "ground_truth_answer": "To be classified as both \"ordinary\" and \"necessary\" for a tax deduction, a business expense must meet distinct legal criteria. An ordinary expense is defined as one that is common and accepted in your field of business. A necessary expense is one that is helpful and appropriate for your business; it does not have to be indispensable to be considered necessary.",
+    "ground_truth_doc_id": "IRS Publication 334 – Tax Guide for Small Business",
+    "ground_truth_page": 32,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What distinct legal criteria must a business expense meet to be classified as both ordinary and necessary for a tax deduction?",
+    "ground_truth_answer": "To be classified as both \"ordinary\" and \"necessary\" for a tax deduction, a business expense must meet distinct legal criteria. An ordinary expense is defined as one that is common and accepted in your field of business. A necessary expense is one that is helpful and appropriate for your business; it does not have to be indispensable to be considered necessary.",
+    "ground_truth_doc_id": "IRS Publication 463 – Travel, Gift, and Car Expenses pdf download - Copy",
+    "ground_truth_page": 2,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What distinct legal criteria must a business expense meet to be classified as both ordinary and necessary for a tax deduction?",
+    "ground_truth_answer": "To be classified as both \"ordinary\" and \"necessary\" for a tax deduction, a business expense must meet distinct legal criteria. An ordinary expense is defined as one that is common and accepted in your field of business. A necessary expense is one that is helpful and appropriate for your business; it does not have to be indispensable to be considered necessary.",
+    "ground_truth_doc_id": "IRS Publication 463 – Travel, Gift, and Car Expenses pdf download - Copy",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What distinct legal criteria must a business expense meet to be classified as both ordinary and necessary for a tax deduction?",
+    "ground_truth_answer": "To be classified as both \"ordinary\" and \"necessary\" for a tax deduction, a business expense must meet distinct legal criteria. An ordinary expense is defined as one that is common and accepted in your field of business. A necessary expense is one that is helpful and appropriate for your business; it does not have to be indispensable to be considered necessary.",
+    "ground_truth_doc_id": "IRS Publication 535 – Business Expenses - Copy",
+    "ground_truth_page": 56,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "Under what conditions is an employee exempt from using Publication 463 to report business-related travel and transportation expenses?",
+    "ground_truth_answer": "An employee is exempt from using Publication 463 to report business-related travel and transportation expenses if all of the following conditions are met: the employee fully accounted to their employer for work-related expenses, received full reimbursement for those expenses, was required by their employer to return any excess reimbursement and did so, and there is no amount shown with a code L in box 12 of their Form W-2, Wage and Tax Statement.",
+    "ground_truth_doc_id": "IRS Publication 463 – Travel, Gift, and Car Expenses pdf download - Copy",
+    "ground_truth_page": 2,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "For a business that does not have an applicable financial statement, what is the maximum per-invoice dollar threshold allowed to deduct the cost of tangible property under the de minimis safe harbor rules?",
+    "ground_truth_answer": "For a business that does not have an applicable financial statement, the maximum per-invoice dollar threshold allowed to deduct the cost of tangible property under the de minimis safe harbor rules is $2,500 per item or invoice.",
+    "ground_truth_doc_id": "IRS Publication 334 – Tax Guide for Small Business",
+    "ground_truth_page": 42,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the structural and length-of-service requirements for an employee achievement award to be considered deductible tangible personal property?",
+    "ground_truth_answer": "To be considered deductible tangible personal property as an employee achievement award, the award must meet specific structural and length-of-service requirements. Structurally, the award must be tangible personal property and cannot be cash, a gift certificate, or an equivalent item. The employer must present the award as part of a meaningful presentation, under conditions and circumstances that do not create a significant likelihood of it being disguised pay. For length-of-service awards, the employee must have at least 5 years of service, and must not have received another length-of-service award during the current year or the previous four years.",
+    "ground_truth_doc_id": "RS Publication 525 – Taxable and Nontaxable Income",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the structural and length-of-service requirements for an employee achievement award to be considered deductible tangible personal property?",
+    "ground_truth_answer": "To be considered deductible tangible personal property as an employee achievement award, the award must meet specific structural and length-of-service requirements. Structurally, the award must be tangible personal property and cannot be cash, a gift certificate, or an equivalent item. The employer must present the award as part of a meaningful presentation, under conditions and circumstances that do not create a significant likelihood of it being disguised pay. For length-of-service awards, the employee must have at least 5 years of service, and must not have received another length-of-service award during the current year or the previous four years.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 50,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How is business rent paid multiple years in advance treated for a cash method taxpayer, and is there an exception?",
+    "ground_truth_answer": "For a cash method taxpayer, business rent paid multiple years in advance generally must be capitalized and deducted only in the year to which it applies, rather than in the year it was paid. Specifically, if an advance payment creates an intangible asset, such as prepaid rent, it must be capitalized and amortized over the appropriate period. However, an exception exists: if the right or benefit created does not extend beyond the earlier of 12 months after the date the right or benefit is first received, or the end of the tax year following the year in which the advance payment was made, then a cash method taxpayer can generally deduct the entire amount when paid.",
+    "ground_truth_doc_id": "IRS Publication 535 – Business Expenses - Copy",
+    "ground_truth_page": 7,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How is business rent paid multiple years in advance treated for a cash method taxpayer, and is there an exception?",
+    "ground_truth_answer": "For a cash method taxpayer, business rent paid multiple years in advance generally must be capitalized and deducted only in the year to which it applies, rather than in the year it was paid. Specifically, if an advance payment creates an intangible asset, such as prepaid rent, it must be capitalized and amortized over the appropriate period. However, an exception exists: if the right or benefit created does not extend beyond the earlier of 12 months after the date the right or benefit is first received, or the end of the tax year following the year in which the advance payment was made, then a cash method taxpayer can generally deduct the entire amount when paid.",
+    "ground_truth_doc_id": "IRS Publication 334 – Tax Guide for Small Business",
+    "ground_truth_page": 15,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "Can a business deduct employee student loan repayments as educational assistance, and when does this provision expire?",
+    "ground_truth_answer": "Under the expanded CARES Act educational assistance provisions, a business can generally deduct the cost of employee student loan repayments as fringe benefits. This exclusion applies to employer payments of principal or interest on any qualified education loan incurred by the employee for their education, whether paid directly to the employee or to a lender. This specific tax exclusion is set to expire on January 1, 2026, unless it is extended by future legislation.",
+    "ground_truth_doc_id": "IRS Publication 535 – Business Expenses - Copy",
+    "ground_truth_page": 9,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the 2025 annual contribution limits for an employee participating in a 401(k) plan, including catch-up contributions for older employees, and are qualified wildfire relief payments taxable?",
+    "ground_truth_answer": "For 2025, the annual contribution limits for an employee participating in a 401(k) plan are $23,500. If the employee is age 50 or older, the limit increases to $31,000. For those age 60 through 63 at the end of 2025, the limit is $37,750. Qualified wildfire relief payments are not considered taxable income.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 49,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the 2025 annual contribution limits for an employee participating in a 401(k) plan, including catch-up contributions for older employees, and are qualified wildfire relief payments taxable?",
+    "ground_truth_answer": "For 2025, the annual contribution limits for an employee participating in a 401(k) plan are $23,500. If the employee is age 50 or older, the limit increases to $31,000. For those age 60 through 63 at the end of 2025, the limit is $37,750. Qualified wildfire relief payments are not considered taxable income.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What are the 2025 annual contribution limits for an employee participating in a 401(k) plan, including catch-up contributions for older employees, and are qualified wildfire relief payments taxable?",
+    "ground_truth_answer": "For 2025, the annual contribution limits for an employee participating in a 401(k) plan are $23,500. If the employee is age 50 or older, the limit increases to $31,000. For those age 60 through 63 at the end of 2025, the limit is $37,750. Qualified wildfire relief payments are not considered taxable income.",
+    "ground_truth_doc_id": "RS Publication 525 – Taxable and Nontaxable Income",
     "ground_truth_page": 1,
     "expect_insufficient_context": false
   },
   {
-    "query": "What is the filing deadline for Form 1099-NEC to report nonemployee compensation for the 2026 tax year?",
-    "ground_truth_answer": "Insufficient Context: The provided database focuses strictly on Form 941 and Form 4506 compliance, filing procedures, and fee schedules.",
-    "ground_truth_doc_id": null,
-    "ground_truth_page": null,
-    "expect_insufficient_context": true
+    "query": "What are the 2025 annual contribution limits for an employee participating in a 401(k) plan, including catch-up contributions for older employees, and are qualified wildfire relief payments taxable?",
+    "ground_truth_answer": "For 2025, the annual contribution limits for an employee participating in a 401(k) plan are $23,500. If the employee is age 50 or older, the limit increases to $31,000. For those age 60 through 63 at the end of 2025, the limit is $37,750. Qualified wildfire relief payments are not considered taxable income.",
+    "ground_truth_doc_id": "RS Publication 525 – Taxable and Nontaxable Income",
+    "ground_truth_page": 30,
+    "expect_insufficient_context": false
   },
   {
-    "query": "What are the rules and criteria for claiming the Earned Income Tax Credit (EITC) on Form 1040 for a single taxpayer without children?",
-    "ground_truth_answer": "Insufficient Context: The provided database focuses strictly on Form 941 and Form 4506 compliance, filing procedures, and fee schedules.",
-    "ground_truth_doc_id": null,
-    "ground_truth_page": null,
-    "expect_insufficient_context": true
+    "query": "Can a married taxpayer filing a separate return claim the Credit for the Elderly or the Disabled if they lived with their spouse during the tax year?",
+    "ground_truth_answer": "No, a taxpayer who is married and files a separate return cannot claim the Credit for the Elderly or the Disabled if they lived with their spouse at any time during the tax year.",
+    "ground_truth_doc_id": "IRS Publication 17 – Your Federal Income Tax",
+    "ground_truth_page": 25,
+    "expect_insufficient_context": false
   },
   {
-    "query": "What is the specific Internal Revenue Code section that governs the Alternative Fuel Vehicle Refueling Property Credit?",
-    "ground_truth_answer": "The credit is governed by § 30C of the Internal Revenue Code[cite: 26].",
-    "ground_truth_doc_id": "Alternative Fuel Vehicle Refueling Property Credit (§ 30C)",
+    "query": "What are the rules and penalty exceptions for a broker voluntarily reporting basis information for a digital asset classified as a noncovered security on Form 1099-DA?",
+    "ground_truth_answer": "A broker is permitted to voluntarily report basis information for a digital asset classified as a noncovered security without being subject to penalties under sections 6721 or 6722 if they check box 9 on Form 1099-DA to indicate that the digital assets are noncovered securities. If box 9 is checked, the broker is not required to complete boxes 1d, 1g, 1h, 1i, and 6, and does not need to check box 2. However, if the broker chooses to complete boxes 1d, 1g, 1h, 1i, 2, and 6 for a noncovered security voluntarily, they will not face penalties for incorrect reporting or furnishing of this information.",
+    "ground_truth_doc_id": "Instructions for Form 1099-DA",
+    "ground_truth_page": 9,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the fee and typical processing time for requesting a copy of a tax return using Form 4506, and is the fee refundable if the return cannot be found?",
+    "ground_truth_answer": "The processing fee for each return requested using Form 4506 is $30. The IRS typically takes up to 75 calendar days to process this request. If the requested tax return cannot be located, the fee will be refunded.",
+    "ground_truth_doc_id": "Form 4506 Request for Copy of Tax Return",
     "ground_truth_page": 1,
     "expect_insufficient_context": false
   },
   {
-    "query": "What specific dollar amount is allocated per charging port if a new electrical panel costing $1,000 supports exactly two ports?",
-    "ground_truth_answer": "The ratable share allocated is exactly $500 per charging port[cite: 26].",
-    "ground_truth_doc_id": "Alternative Fuel Vehicle Refueling Property Credit (§ 30C)",
+    "query": "What formatting and required statement rules apply if a single signature line is used for both tax certifications and unrelated business provisions on a substitute Form W-9?",
+    "ground_truth_answer": "If a single signature line is used for both the required tax certifications and other unrelated business provisions on a substitute Form W-9, the certifications must be highlighted, boxed, printed in bold-face type, or otherwise made to stand out. Additionally, the following statement must appear immediately above the single signature line, also made to stand out: “The IRS does not require your consent to any provision of this document other than the certifications required to avoid backup withholding.”",
+    "ground_truth_doc_id": "Instructions for the Requester of Form W-9",
+    "ground_truth_page": 3,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the backup withholding rate for reportable payments made after 2017 when a payee fails to provide a Taxpayer Identification Number or provides an obviously incorrect TIN?",
+    "ground_truth_answer": "For reportable payments made after 2017, the backup withholding rate is 24% when a payee fails to provide a Taxpayer Identification Number (TIN) or provides an obviously incorrect TIN.",
+    "ground_truth_doc_id": "IRS Publication 7951 Backup witholding",
     "ground_truth_page": 1,
     "expect_insufficient_context": false
   },
   {
-    "query": "What does the abbreviation GEOID stand for when identifying census tract boundaries for the § 30C credit?",
-    "ground_truth_answer": "GEOID stands for geographic identifier[cite: 26].",
-    "ground_truth_doc_id": "Alternative Fuel Vehicle Refueling Property Credit (§ 30C)",
+    "query": "What form should a payer use to report backup withholding, and where can they find information on deposit requirements?",
+    "ground_truth_answer": "A payer should use Form 945, Annual Return of Withheld Federal Income Tax, to report backup withholding. For information on deposit requirements for Form 945, consult the instructions for Form 945 or Publication 15 (Circular E), Employer’s Tax Guide.",
+    "ground_truth_doc_id": "IRS Publication 7951 Backup witholding",
+    "ground_truth_page": 2,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "What is the penalty assessed under section 6702(a) for a “frivolous tax return”?",
+    "ground_truth_answer": "The penalty assessed under section 6702(a) for a “frivolous tax return” is $5,000.",
+    "ground_truth_doc_id": "Microsoft Word - RR-07-19",
+    "ground_truth_page": 8,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "Is compensation received in exchange for personal services (wages) considered taxable income under section 61(a)(1) of the Internal Revenue Code?",
+    "ground_truth_answer": "Yes, compensation received in exchange for personal services, commonly known as wages, is considered income under section 61(a)(1) of the Internal Revenue Code and is subject to federal income tax. Arguments that such compensation is not taxable income have been consistently rejected by courts and are considered frivolous. The Sixteenth Amendment to the Constitution grants Congress the power to levy taxes on income from any source, including wages, without apportionment among the states.",
+    "ground_truth_doc_id": "Microsoft Word - RR-07-19",
+    "ground_truth_page": 7,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "Is compensation received in exchange for personal services (wages) considered taxable income under section 61(a)(1) of the Internal Revenue Code?",
+    "ground_truth_answer": "Yes, compensation received in exchange for personal services, commonly known as wages, is considered income under section 61(a)(1) of the Internal Revenue Code and is subject to federal income tax. Arguments that such compensation is not taxable income have been consistently rejected by courts and are considered frivolous. The Sixteenth Amendment to the Constitution grants Congress the power to levy taxes on income from any source, including wages, without apportionment among the states.",
+    "ground_truth_doc_id": "Microsoft Word - RR-07-19",
+    "ground_truth_page": 4,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "Is compensation received in exchange for personal services (wages) considered taxable income under section 61(a)(1) of the Internal Revenue Code?",
+    "ground_truth_answer": "Yes, compensation received in exchange for personal services, commonly known as wages, is considered income under section 61(a)(1) of the Internal Revenue Code and is subject to federal income tax. Arguments that such compensation is not taxable income have been consistently rejected by courts and are considered frivolous. The Sixteenth Amendment to the Constitution grants Congress the power to levy taxes on income from any source, including wages, without apportionment among the states.",
+    "ground_truth_doc_id": "Microsoft Word - RR-07-19",
+    "ground_truth_page": 2,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "Is compensation received in exchange for personal services (wages) considered taxable income under section 61(a)(1) of the Internal Revenue Code?",
+    "ground_truth_answer": "Yes, compensation received in exchange for personal services, commonly known as wages, is considered income under section 61(a)(1) of the Internal Revenue Code and is subject to federal income tax. Arguments that such compensation is not taxable income have been consistently rejected by courts and are considered frivolous. The Sixteenth Amendment to the Constitution grants Congress the power to levy taxes on income from any source, including wages, without apportionment among the states.",
+    "ground_truth_doc_id": "Microsoft Word - RR-07-19",
+    "ground_truth_page": 5,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "Is compensation received in exchange for personal services (wages) considered taxable income under section 61(a)(1) of the Internal Revenue Code?",
+    "ground_truth_answer": "Yes, compensation received in exchange for personal services, commonly known as wages, is considered income under section 61(a)(1) of the Internal Revenue Code and is subject to federal income tax. Arguments that such compensation is not taxable income have been consistently rejected by courts and are considered frivolous. The Sixteenth Amendment to the Constitution grants Congress the power to levy taxes on income from any source, including wages, without apportionment among the states.",
+    "ground_truth_doc_id": "Microsoft Word - RR-07-19",
+    "ground_truth_page": 4,
+    "expect_insufficient_context": false
+  },
+  {
+    "query": "How did total municipal bond issuances change from calendar year 2022 to calendar year 2023?",
+    "ground_truth_answer": "Total municipal bond issuances decreased by 1.3% from $456.4 billion in Calendar Year 2022 to $450.3 billion in Calendar Year 2023.",
+    "ground_truth_doc_id": "Municipal Bonds, Calendar Year 2023",
     "ground_truth_page": 1,
     "expect_insufficient_context": false
   },
   {
-    "query": "Which specific appendix contains the IRS-provided list of eligible GEOIDs under the 2020 census tract boundaries?",
-    "ground_truth_answer": "The list under the 2020 boundaries is found in Appendix B[cite: 26].",
-    "ground_truth_doc_id": "Alternative Fuel Vehicle Refueling Property Credit (§ 30C)",
-    "ground_truth_page": 1,
+    "query": "Ki nimewo telefòn gratis pou Sèvis Priyoritè Pratisyen an (PPS) ki bay sipò pwofesyonèl pou kesyon konsènan kont yo?",
+    "ground_truth_answer": "Nimewo telefòn gratis pou Sèvis Priyoritè Pratisyen an (PPS) ki bay sipò pwofesyonèl pou kesyon konsènan kont yo se 1-866-860-4259.",
+    "ground_truth_doc_id": "Piblikasyon 947 (HT)",
+    "ground_truth_page": 2,
     "expect_insufficient_context": false
   },
   {
-    "query": "Which specific appendix must be used to verify an 11-digit GEOID if an entity utilizes the alternative 2015 census tract boundaries?",
-    "ground_truth_answer": "The entity must check the IRS list located in Appendix A[cite: 26].",
-    "ground_truth_doc_id": "Alternative Fuel Vehicle Refueling Property Credit (§ 30C)",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Under which specific section of the Internal Revenue Code is an 'obviously incorrect' Taxpayer Identification Number classified?",
-    "ground_truth_answer": "An obviously incorrect TIN is classified under IRC section 3406(a)(1)(A)[cite: 27].",
-    "ground_truth_doc_id": "Backup Withholding & Taxpayer Identification Numbers (TIN)",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What specific types of government payments correspond to Boxes 5, 6, and 7 on Form 1099-G that are subject to backup withholding?",
-    "ground_truth_answer": "Box 5 corresponds to RTAA Payments, Box 6 to Taxable Grants, and Box 7 to Agriculture Payments[cite: 27].",
-    "ground_truth_doc_id": "Backup Withholding & Taxpayer Identification Numbers (TIN)",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What form must a payee complete to verify they reported the payments and paid the tax for a payer seeking backup withholding relief?",
-    "ground_truth_answer": "The payee must complete Form 4669 (Statement of Payments Received)[cite: 27].",
-    "ground_truth_doc_id": "Backup Withholding & Taxpayer Identification Numbers (TIN)",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Which form must a payer file alongside Form 4669 to officially request relief of payment of certain withholding taxes?",
-    "ground_truth_answer": "The payer must submit Form 4670 (Request for Relief of Payment of Certain Withholding Taxes)[cite: 27].",
-    "ground_truth_doc_id": "Backup Withholding & Taxpayer Identification Numbers (TIN)",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "In what year was the Sixteenth Amendment to the United States Constitution officially ratified?",
-    "ground_truth_answer": "The Sixteenth Amendment was ratified in the year 1913[cite: 28].",
-    "ground_truth_doc_id": "Constitutional Law & Frivolous Return Penalties",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "Which United States Supreme Court case officially reviewed and upheld the constitutionality of the Sixteenth Amendment?",
-    "ground_truth_answer": "The authority was reviewed and upheld in Brushaber v. Union Pacific Railroad Co.[cite: 28].",
-    "ground_truth_doc_id": "Constitutional Law & Frivolous Return Penalties",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What was the total value of all municipal bond issuances combined during Calendar Year 2023 according to IRS Statistics of Income data?",
-    "ground_truth_answer": "The total value of all municipal bond issuances combined was $450.3 billion[cite: 29].",
-    "ground_truth_doc_id": "IRS Statistics of Income (SOI) Bond Market Data",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the Haitian Creole translation provided for the historical role of 'Tax Matters Partner'?",
-    "ground_truth_answer": "The Haitian Creole translation provided is 'Patnè pou Zafè Enpo'[cite: 30].",
-    "ground_truth_doc_id": "Bipartisan Budget Act Partnership Representation",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What is the Haitian Creole translation provided for the role of 'Partnership Representative'?",
-    "ground_truth_answer": "The Haitian Creole translation provided is 'Reprezantan Patenarya a'[cite: 30].",
-    "ground_truth_doc_id": "Bipartisan Budget Act Partnership Representation",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What specific legal act and section is explicitly cited to state that the Letter 6112 and 6112-A compliance communications are not considered an official audit?",
-    "ground_truth_answer": "They are not considered an audit under Section 530 of the Revenue Act of 1978[cite: 27].",
-    "ground_truth_doc_id": "Backup Withholding & Taxpayer Identification Numbers (TIN)",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What was the total dollar value of governmental bonds issued in Calendar Year 2023 based on IRS Statistics of Income (SOI) data?",
-    "ground_truth_answer": "Governmental bonds totaled $347.9 billion during CY 2023[cite: 29].",
-    "ground_truth_doc_id": "IRS Statistics of Income (SOI) Bond Market Data",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What percentage share of the total municipal bond market did governmental bonds command in Calendar Year 2023?",
-    "ground_truth_answer": "Governmental bonds made up 77.3% of the total municipal bond issuances[cite: 29].",
-    "ground_truth_doc_id": "IRS Statistics of Income (SOI) Bond Market Data",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What signed form must be provided to reflect a requested backup withholding abatement if the tax has already been paid by the payer?",
-    "ground_truth_answer": "The payer must provide a signed Form 945-X[cite: 27].",
-    "ground_truth_doc_id": "Backup Withholding & Taxpayer Identification Numbers (TIN)",
-    "ground_truth_page": 1,
-    "expect_insufficient_context": false
-  },
-  {
-    "query": "What action must an organization take to claim the § 30C Alternative Fuel Vehicle Refueling Property Credit via elective pay rather than letting the seller claim it?",
-    "ground_truth_answer": "The organization must notify the seller in writing that it intends to claim the credit via elective pay[cite: 26].",
-    "ground_truth_doc_id": "Alternative Fuel Vehicle Refueling Property Credit (§ 30C)",
-    "ground_truth_page": 1,
+    "query": "Ki fòm ou dwe itilize pou nonmen yon reprezantan ki rekonèt pou aji sou non ou devan IRS?",
+    "ground_truth_answer": "Ou dwe itilize Fòm IRS 2848 la pou nonmen yon reprezantan ki rekonèt pou aji sou non ou devan IRS.",
+    "ground_truth_doc_id": "Piblikasyon 947 (HT)",
+    "ground_truth_page": 8,
     "expect_insufficient_context": false
   }
 ]
