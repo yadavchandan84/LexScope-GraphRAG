@@ -1,6 +1,8 @@
 import time
 
 import google.generativeai as genai
+
+from config import settings
 from google.api_core.exceptions import (
     PermissionDenied,
     ResourceExhausted,
@@ -60,6 +62,7 @@ class GeminiRotator:
                     response_mime_type="application/json",
                     response_schema=response_schema,
                 ),
+                request_options={"timeout": settings.gemini_timeout},
             )
             return response.text
         except ResourceExhausted as e:

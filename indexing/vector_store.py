@@ -10,7 +10,8 @@ from qdrant_client.models import (
 from config import settings
 
 COLLECTION_NAME = "legal_chunks"
-DENSE_VECTOR_SIZE = 1024  # bge-large-en-v1.5 output dimension
+# Must match the configured embedding model's output size (default bge-small=384).
+DENSE_VECTOR_SIZE = settings.embedding_dim
 
 
 @lru_cache(maxsize=1)
@@ -23,9 +24,25 @@ def get_qdrant_client() -> QdrantClient:
     return QdrantClient(path=settings.qdrant_local_path)
 
 
+def _existing_dense_size(client: QdrantClient) -> int | None:
+    info = client.get_collection(COLLECTION_NAME)
+    vectors = info.config.params.vectors
+    dense = vectors.get("dense") if isinstance(vectors, dict) else None
+    return dense.size if dense is not None else None
+
+
 def ensure_collection(client: QdrantClient) -> None:
     if client.collection_exists(COLLECTION_NAME):
-        return
+        existing = _existing_dense_size(client)
+        if existing == DENSE_VECTOR_SIZE:
+            return
+        # The embedding model changed (e.g. bge-large 1024 -> bge-small 384).
+        # Old vectors are unusable with the new model, so rebuild the collection.
+        print(
+            f"Collection '{COLLECTION_NAME}' has dense size {existing}, expected "
+            f"{DENSE_VECTOR_SIZE}. Recreating it for the new embedding model."
+        )
+        client.delete_collection(COLLECTION_NAME)
     client.create_collection(
         collection_name=COLLECTION_NAME,
         vectors_config={

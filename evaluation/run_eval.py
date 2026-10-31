@@ -17,6 +17,9 @@ def load_golden_set(path: str) -> list[dict]:
 
 
 def run_pipeline_for_eval(query: str) -> dict:
+    # ragas needs the retrieved contexts as well as the answer, so we run the
+    # retrieval + generation steps directly here rather than the cached
+    # answer_query() (which only stores the final response payload).
     chunks = run_retrieval_pipeline(query)
     result = generate_answer(query, chunks)
     return {"answer": result.answer, "contexts": [c.text for c in chunks]}

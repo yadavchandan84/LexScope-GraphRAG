@@ -32,7 +32,18 @@ def index_chunks_to_qdrant(client: QdrantClient, chunks: list[dict]) -> int:
                 payload=chunk,
             )
         )
-    client.upsert(collection_name=COLLECTION_NAME, points=points)
+
+    BATCH_SIZE = 100
+
+    for i in range(0, len(points), BATCH_SIZE):
+        batch = points[i:i + BATCH_SIZE]
+        client.upsert(
+            collection_name=COLLECTION_NAME,
+            points=batch,
+            wait=True,
+        )
+        print(f"Uploaded {min(i + BATCH_SIZE, len(points))}/{len(points)}")
+
     return len(points)
 
 

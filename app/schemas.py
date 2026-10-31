@@ -19,3 +19,4 @@ class QueryResponse(BaseModel):
     confidence: str
     insufficient_context: bool
     retrieved_chunk_ids: list[str]
+    cached: bool = False

@@ -1,0 +1,59 @@
+# Render Blueprint for the LexScope backend API.
+# Push this repo to GitHub, then in Render: New > Blueprint > pick this repo.
+#
+# Memory: with the default small models (bge-small-en-v1.5 + bge-reranker-base)
+# the API needs ~2GB RAM. Use the "standard" plan (2GB). To fit the free/starter
+# 512MB tier, set RERANKER_ENABLED=false (skips the cross-encoder) — retrieval
+# then relies on hybrid RRF ordering, which is lower quality but much lighter.
+services:
+  - type: web
+    name: lexscope-api
+    runtime: python
+    plan: standard            # 2GB RAM; downgrade to starter + RERANKER_ENABLED=false for 512MB
+    # Install CPU-only torch first so pip doesn't download CUDA wheels.
+    buildCommand: pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+    startCommand: uvicorn app.api:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.5"
+      # Model config (defaults are already small; shown here for clarity).
+      - key: EMBEDDING_MODEL
+        value: BAAI/bge-small-en-v1.5
+      - key: EMBEDDING_DIM
+        value: "384"
+      - key: RERANKER_MODEL
+        value: BAAI/bge-reranker-base
+      - key: RERANKER_ENABLED
+        value: "true"
+      - key: CACHE_ENABLED
+        value: "true"
+      # Redis connection is injected automatically from the Key Value store below.
+      - key: REDIS_URL
+        fromService:
+          name: lexscope-redis
+          type: redis
+          property: connectionString
+      # --- Secrets: set these in the Render dashboard (sync:false = not in git) ---
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: NEO4J_URI
+        sync: false
+      - key: NEO4J_USERNAME
+        sync: false
+      - key: NEO4J_PASSWORD
+        sync: false
+      - key: GEMINI_API_KEYS
+        sync: false
+      - key: GEMINI_MODELS
+        sync: false
+
+  # Managed Redis for the cache (Render's free Key Value instance).
+  - type: redis
+    name: lexscope-redis
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []           # only reachable from your Render services

@@ -7,18 +7,24 @@ from retrieval.hybrid_retriever import RetrievedChunk, hybrid_search
 from retrieval.reranker import rerank
 
 
+# Candidate pool feeding the cross-encoder reranker. bge-reranker-large is the
+# single biggest per-query CPU cost, so we score a focused pool (20) rather than
+# 30 — RRF already surfaces the strongest hits near the top.
+_RERANK_CANDIDATES = 20
+
+
 def run_retrieval_pipeline(
     query: str, doc_type_filter: str | None = None, rerank_top_k: int = 8
 ) -> list[RetrievedChunk]:
     qdrant_client = get_qdrant_client()
-    candidates = hybrid_search(qdrant_client, query, top_k=30, doc_type_filter=doc_type_filter)
+    candidates = hybrid_search(
+        qdrant_client, query, top_k=_RERANK_CANDIDATES, doc_type_filter=doc_type_filter
+    )
     top = rerank(query, candidates, top_k=rerank_top_k)
 
+    # Shared, cached driver — do NOT close it here; it's reused across requests.
     driver = get_neo4j_driver()
-    try:
-        expanded = expand_with_citations(driver, qdrant_client, top, limit=10)
-    finally:
-        driver.close()
+    expanded = expand_with_citations(driver, qdrant_client, top, limit=10)
 
     return expanded
 

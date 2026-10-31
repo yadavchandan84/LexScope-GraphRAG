@@ -57,8 +57,9 @@ flowchart TD
 | PDF parsing | PyMuPDF |
 | Vector search | Qdrant Cloud or local embedded Qdrant |
 | Graph database | Neo4j AuraDB |
-| Embeddings | `BAAI/bge-large-en-v1.5` |
-| Reranking | `BAAI/bge-reranker-large` |
+| Embeddings | `BAAI/bge-small-en-v1.5` by default (configurable via `EMBEDDING_MODEL`) |
+| Reranking | `BAAI/bge-reranker-base` by default (configurable via `RERANKER_MODEL`) |
+| Cache | Redis (optional, falls back to in-process cache) |
 | Generation | Gemini via `google-generativeai` |
 | Backend | FastAPI + Uvicorn |
 | Frontend | Plain HTML, CSS, JavaScript |
@@ -213,8 +214,10 @@ Invoke-RestMethod http://localhost:8000/health
 Expected response:
 
 ```json
-{"status": "ok"}
+{"status": "ok", "cache": "redis"}
 ```
+
+`cache` is `redis` when `REDIS_URL` is reachable, otherwise `memory`.
 
 ### Step 4: Run Frontend (Local)
 
@@ -312,6 +315,27 @@ pytest tests/test_config.py -q
 ```
 
 Some integration tests require valid Qdrant, Neo4j, Gemini credentials, and downloaded BGE models.
+
+## Caching
+
+Answers are cached by (query, doc type filter, top_k), and dense/sparse query embeddings are cached by model and text. Set `REDIS_URL` (for example `redis://localhost:6379/0` with `docker compose up -d redis`) for a shared cache that survives restarts. Pre-fill the cache with every golden-set question:
+
+```powershell
+python -m evaluation.warm_cache
+```
+
+## Models and re-indexing
+
+Model choice is set in `.env` (`EMBEDDING_MODEL`, `EMBEDDING_DIM`, `RERANKER_MODEL`, `RERANKER_ENABLED`). The defaults are the small models so the API fits on a 2 GB host. Changing the embedding model requires re-running `python -m indexing.run_index`; the indexer recreates the Qdrant collection when the vector size changes.
+
+## Deploy to Render
+
+1. Re-index Qdrant with the configured embedding model (`python -m indexing.run_index`).
+2. In Render, choose New > Blueprint and select this repository. `render.yaml` creates the API web service and a Redis instance.
+3. Fill in the secret env vars in the Render dashboard: `QDRANT_URL`, `QDRANT_API_KEY`, `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`, `GEMINI_API_KEYS`, `GEMINI_MODELS`.
+4. If Render assigns a URL other than `https://lexscope-api.onrender.com`, update the fallback URL at the top of `frontend/app.js` and redeploy the frontend.
+
+The blueprint uses the 2 GB `standard` plan. The 512 MB plans are likely to run out of memory with torch loaded.
 
 ## Troubleshooting
 

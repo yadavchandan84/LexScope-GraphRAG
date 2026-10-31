@@ -1,4 +1,10 @@
-const API = "http://localhost:8000";
+// Backend URL: local API when the page is served from localhost, otherwise the
+// Render deployment. If Render gives your service a different URL, change the
+// fallback below (or set window.LEXSCOPE_API_URL before this script loads).
+const IS_LOCAL = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+const API =
+  window.LEXSCOPE_API_URL ||
+  (IS_LOCAL ? "http://localhost:8000" : "https://lexscope-api.onrender.com");
 
 const queryEl = document.getElementById("q");
 const askButton = document.getElementById("ask");

@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 
 from qdrant_client import QdrantClient
@@ -34,8 +35,13 @@ def hybrid_search(
     top_k: int = 30,
     doc_type_filter: str | None = None,
 ) -> list[RetrievedChunk]:
-    dense_vec = embed_query(query)
-    sparse_vec = sparse_embed_query(query)
+    # Dense and sparse embeddings are independent; compute them concurrently so
+    # their (CPU + potential cache) latency overlaps instead of adding up.
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        dense_future = pool.submit(embed_query, query)
+        sparse_future = pool.submit(sparse_embed_query, query)
+        dense_vec = dense_future.result()
+        sparse_vec = sparse_future.result()
 
     query_filter = None
     if doc_type_filter:
