@@ -62,7 +62,8 @@ fi
 # --- install dependencies ----------------------------------------------------
 echo ">> Installing dependencies (this is slow the first time)"
 "$VPY" -m pip install --upgrade pip -q
-"$VPY" -m pip install -r requirements.txt -q
+# requirements-dev.txt includes requirements.txt plus PyMuPDF for ingestion.
+"$VPY" -m pip install -r requirements-dev.txt -q
 
 # --- check .env --------------------------------------------------------------
 if [ ! -f .env ]; then
@@ -77,7 +78,7 @@ if [ "$SKIP_INDEX" -eq 0 ]; then
   echo ">> Ingesting PDFs -> ingestion/chunks.json"
   "$VPY" -m ingestion.run_ingest
 
-  echo ">> Indexing chunks -> Qdrant (embedded) + Neo4j (first run downloads BGE models, ~2.5GB)"
+  echo ">> Indexing chunks -> Qdrant + Neo4j (first run downloads ONNX models, ~100MB)"
   "$VPY" -m indexing.run_index
 else
   echo ">> Skipping ingest/index (--skip-index)"

@@ -1,16 +1,15 @@
-# Runtime dependencies for the API (what Render needs to install).
-# On Linux, plain `pip install torch` pulls several GB of CUDA packages. The
-# Render build command (render.yaml) installs the CPU-only torch wheel first,
-# which then satisfies the torch pin below.
+# Runtime dependencies for the API (what Render installs).
+# All models run on ONNX Runtime via fastembed, so there is no PyTorch and the
+# API fits in Render's 512 MB free plan.
 fastapi==0.115.0
 uvicorn[standard]==0.32.0
 pydantic==2.9.2
-pydantic-settings==2.5.2
 python-dotenv==1.0.1
-pymupdf==1.24.11
 qdrant-client[fastembed]==1.11.3
 neo4j==5.25.0
-sentence-transformers==3.2.1
-torch==2.4.1
 google-generativeai==0.8.3
 redis==5.0.8
+# Used directly by the ONNX reranker; versions are resolved by fastembed.
+onnxruntime
+tokenizers
+huggingface-hub

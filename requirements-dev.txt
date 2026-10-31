@@ -1,6 +1,8 @@
-# Dev/eval-only dependencies. Not needed to run the API in production.
-#   pip install -r requirements.txt -r requirements-dev.txt
+# Dev-only dependencies: PDF ingestion, evaluation and tests.
+# Not needed to run the API in production.
+#   pip install -r requirements-dev.txt
 -r requirements.txt
+pymupdf==1.24.11
 ragas==0.2.6
 datasets==3.0.1
 pytest==8.3.3

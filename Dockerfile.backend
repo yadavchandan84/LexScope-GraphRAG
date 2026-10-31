@@ -1,19 +1,12 @@
 FROM python:3.10-slim
 WORKDIR /app
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-# Copy requirements and install python packages.
-# CPU-only torch first, so pip doesn't pull several GB of CUDA packages.
+# Install python packages (no PyTorch: models run on ONNX Runtime).
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu && \
     pip install --no-cache-dir -r requirements.txt
-# Pre-download the default (small) models to speed up container startup.
-# Keep these in sync with EMBEDDING_MODEL / RERANKER_MODEL in config.py.
-RUN python -c "from sentence_transformers import SentenceTransformer, CrossEncoder; SentenceTransformer('BAAI/bge-small-en-v1.5'); CrossEncoder('BAAI/bge-reranker-base')"
-# Copy the rest of the application code
+# Copy the application code, then download the models into the image so the
+# container starts without fetching them.
 COPY . /app
+RUN python -m app.download_models
 EXPOSE 8000
 CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]

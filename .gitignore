@@ -9,3 +9,4 @@ evaluation/report.csv
 qdrant_data/
 install.log
 pdfs
+models_cache/

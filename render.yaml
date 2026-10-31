@@ -1,41 +1,47 @@
-# Render Blueprint for the LexScope backend API.
-# Push this repo to GitHub, then in Render: New > Blueprint > pick this repo.
+# Render Blueprint for the LexScope backend API (free plan).
+# In Render: New > Blueprint > pick this repo.
 #
-# Memory: with the default small models (bge-small-en-v1.5 + bge-reranker-base)
-# the API needs ~2GB RAM. Use the "standard" plan (2GB). To fit the free/starter
-# 512MB tier, set RERANKER_ENABLED=false (skips the cross-encoder) — retrieval
-# then relies on hybrid RRF ordering, which is lower quality but much lighter.
+# Fits the free plan (512 MB RAM, 0.1 CPU): models run on ONNX Runtime with no
+# PyTorch, and the measured footprint is about 350-400 MB.
+# The cross-encoder reranker is off by default here because 0.1 CPU makes it
+# slow; set RERANKER_ENABLED=true on a paid plan for better ranking.
 services:
   - type: web
     name: lexscope-api
     runtime: python
-    plan: standard            # 2GB RAM; downgrade to starter + RERANKER_ENABLED=false for 512MB
-    # Install CPU-only torch first so pip doesn't download CUDA wheels.
-    buildCommand: pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+    plan: free
+    # Models are downloaded at build time into models_cache/ so the service
+    # doesn't download them every time it wakes up.
+    buildCommand: pip install -r requirements.txt && python -m app.download_models
     startCommand: uvicorn app.api:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
         value: "3.11.5"
-      # Model config (defaults are already small; shown here for clarity).
       - key: EMBEDDING_MODEL
         value: BAAI/bge-small-en-v1.5
       - key: EMBEDDING_DIM
         value: "384"
       - key: RERANKER_MODEL
-        value: BAAI/bge-reranker-base
+        value: Xenova/ms-marco-MiniLM-L-6-v2
       - key: RERANKER_ENABLED
-        value: "true"
+        value: "false"
+      - key: ONNX_THREADS
+        value: "1"
+      - key: MODEL_CACHE_DIR
+        value: models_cache
+      - key: HF_HUB_DISABLE_TELEMETRY
+        value: "1"
       - key: CACHE_ENABLED
         value: "true"
-      # Redis connection is injected automatically from the Key Value store below.
+      # Redis connection string from the Key Value instance below.
       - key: REDIS_URL
         fromService:
           name: lexscope-redis
-          type: redis
+          type: keyvalue
           property: connectionString
-      # --- Secrets: set these in the Render dashboard (sync:false = not in git) ---
+      # --- Secrets: Render asks for these when you create the Blueprint ---
       - key: QDRANT_URL
         sync: false
       - key: QDRANT_API_KEY
@@ -51,8 +57,9 @@ services:
       - key: GEMINI_MODELS
         sync: false
 
-  # Managed Redis for the cache (Render's free Key Value instance).
-  - type: redis
+  # Free Key Value (Redis-compatible) instance for the cache. Free instances
+  # don't persist data, so the cache empties when it restarts.
+  - type: keyvalue
     name: lexscope-redis
     plan: free
     maxmemoryPolicy: allkeys-lru

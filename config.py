@@ -39,16 +39,28 @@ class Settings:
         self.neo4j_timeout = self._optional_int("NEO4J_TIMEOUT", 15)
 
         # --- Models ----------------------------------------------------------
-        # Defaults are the small, CPU/RAM-friendly variants so the API fits on
-        # modest hosts (e.g. Render 512MB-2GB). For best quality on a big box,
-        # switch to BAAI/bge-large-en-v1.5 (dim 1024) + BAAI/bge-reranker-large.
-        # IMPORTANT: EMBEDDING_DIM must match EMBEDDING_MODEL's output size, and
-        # changing the embedder requires re-indexing the corpus.
+        # All models run on ONNX Runtime (no PyTorch), so the API fits in the
+        # 512 MB Render free plan.
+        # Embeddings use fastembed. EMBEDDING_DIM must match the model, and
+        # changing the embedder requires re-indexing the corpus:
+        #   BAAI/bge-small-en-v1.5 -> 384 (default)
+        #   BAAI/bge-base-en-v1.5  -> 768 (better quality, more RAM)
         self.embedding_model = self._optional("EMBEDDING_MODEL") or "BAAI/bge-small-en-v1.5"
         self.embedding_dim = self._optional_int("EMBEDDING_DIM", 384)
-        self.reranker_model = self._optional("RERANKER_MODEL") or "BAAI/bge-reranker-base"
-        # When false, skip the cross-encoder reranker entirely (lowest RAM).
+        # Reranker: a Hugging Face repo that ships onnx/<RERANKER_ONNX_FILE> and
+        # tokenizer.json. The default MiniLM cross-encoder is ~23 MB quantized.
+        self.reranker_model = self._optional("RERANKER_MODEL") or "Xenova/ms-marco-MiniLM-L-6-v2"
+        self.reranker_onnx_file = self._optional("RERANKER_ONNX_FILE") or "model_quantized.onnx"
+        self.reranker_max_length = self._optional_int("RERANKER_MAX_LENGTH", 256)
+        # When false, skip the cross-encoder and keep the hybrid (RRF) order.
         self.reranker_enabled = self._optional("RERANKER_ENABLED").lower() not in ("0", "false", "no")
+        # Where downloaded models are stored. The Render build downloads them
+        # into this folder so the running service doesn't fetch them on start.
+        self.model_cache_dir = self._optional("MODEL_CACHE_DIR") or "models_cache"
+        # ONNX Runtime threads for the embedding models. Unset = all cores
+        # (fastest for local indexing); 1 = least RAM (used on Render).
+        threads = self._optional_int("ONNX_THREADS", 0)
+        self.onnx_threads = threads if threads > 0 else None
 
     @staticmethod
     def _require(name: str) -> str:

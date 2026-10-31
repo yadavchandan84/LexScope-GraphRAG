@@ -11,7 +11,11 @@ _MODEL_NAME = "Qdrant/bm25"
 
 @lru_cache(maxsize=1)
 def get_sparse_model() -> SparseTextEmbedding:
-    return SparseTextEmbedding(model_name=_MODEL_NAME)
+    return SparseTextEmbedding(
+        model_name=_MODEL_NAME,
+        cache_dir=settings.model_cache_dir,
+        threads=settings.onnx_threads,
+    )
 
 
 def sparse_embed_documents(texts: list[str]) -> list[SparseVector]:
